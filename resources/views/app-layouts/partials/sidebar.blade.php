@@ -13,9 +13,16 @@
             </div>
 
         <div class="menu-item" id="drugs_nav">
-            <a href="" class="menu-link">
+            <a href="{{ route('grains') }}" class="menu-link">
                 <span class="menu-icon"><i class="fas fa-file-alt    "></i> </span>
                 <span class="menu-text">Grains List</span>
+            </a>
+        </div>
+
+        <div class="menu-item" id="pharmacy_nav">
+            <a href="{{ route('warehouses') }}" class="menu-link">
+                <span class="menu-icon"><i class="fas fa-building-columns"></i> </span>
+                <span class="menu-text">WareHouses</span>
             </a>
         </div>
 
@@ -57,12 +64,7 @@
                     </a>
                 </div>
 
-                <div class="menu-item" id="pharmacy_nav">
-                    <a href="" class="menu-link">
-                        <span class="menu-icon"><i class="fas fa-building-columns"></i> </span>
-                        <span class="menu-text">WareHouses</span>
-                    </a>
-                </div>
+
             @endif
 
 

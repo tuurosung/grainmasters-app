@@ -20,12 +20,10 @@
 <div class="card border-0">
     <div class="card-body">
 
-        <h5 class="fw-500 Avante mb-4">List Of Grains</h5>
-
         <table class="table table-sm datatables">
             <thead>
                 <tr>
-                    <th class="">ID</th>
+                    <th class="">#</th>
                     <th class="">Name</th>
                     <th class="">Color</th>
                     <th class="">Size</th>

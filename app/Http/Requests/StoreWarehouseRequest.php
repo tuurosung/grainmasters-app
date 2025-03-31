@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreWarehouseRequest extends FormRequest
@@ -11,7 +12,7 @@ class StoreWarehouseRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +22,19 @@ class StoreWarehouseRequest extends FormRequest
      */
     public function rules(): array
     {
+        $id = request()->route('warehouse')?->id ?? null;
+
         return [
-            //
+            'description' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::unique('warehouses')->whereNot('id', $id)
+            ],
+            'location' => 'required|string|max:255',
+            'town' => 'nullable|string|max:255',
+            'region' => 'nullable|string|max:255',
+            'capacity' => 'required|integer|min:0',
         ];
     }
 }

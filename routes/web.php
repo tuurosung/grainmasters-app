@@ -24,4 +24,5 @@ require __DIR__.'/auth.php';
 Route::middleware('auth')->group(function () {
 
     require __DIR__ . '/app-routes/grainControllers.php';
+    require __DIR__ . '/app-routes/warehouseControllers.php';
 });

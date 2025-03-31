@@ -2,18 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\HandleResourceActions;
+use App\HandleReturns;
 use App\Http\Requests\StoreWarehouseRequest;
 use App\Http\Requests\UpdateWarehouseRequest;
 use App\Models\Warehouse;
 
 class WarehouseController extends Controller
 {
+    use HandleResourceActions;
+
+    protected $modelName = 'Warehouse'; // Name of the model, this is used in error messages
+    private $model; // Model instance injected into the controller
+
+    public function __construct()
+    {
+        $this->model = new Warehouse();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('app-layouts.app.warehouse.warehouses', [
+            'warehouses' => Warehouse::all(),
+        ]);
     }
 
     /**
@@ -29,7 +43,7 @@ class WarehouseController extends Controller
      */
     public function store(StoreWarehouseRequest $request)
     {
-        //
+        return $this->handleStore($request);
     }
 
     /**
@@ -45,7 +59,9 @@ class WarehouseController extends Controller
      */
     public function edit(Warehouse $warehouse)
     {
-        //
+        return view('app-layouts.app.warehouse.modals.edit-warehouse', [
+            'warehouse' => $warehouse
+        ]);
     }
 
     /**
@@ -53,7 +69,7 @@ class WarehouseController extends Controller
      */
     public function update(UpdateWarehouseRequest $request, Warehouse $warehouse)
     {
-        //
+        return $this->handleUpdate($request, $warehouse);
     }
 
     /**
@@ -61,6 +77,6 @@ class WarehouseController extends Controller
      */
     public function destroy(Warehouse $warehouse)
     {
-        //
+       return $this->handleDelete($warehouse);
     }
 }

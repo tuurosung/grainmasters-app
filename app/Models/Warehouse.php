@@ -9,4 +9,13 @@ class Warehouse extends Model
 {
     /** @use HasFactory<\Database\Factories\WarehouseFactory> */
     use HasFactory;
+
+
+    protected $fillable = [
+        'description',
+        'location',
+        'town',
+        'region',
+        'capacity',
+    ];
 }

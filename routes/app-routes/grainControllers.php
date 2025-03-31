@@ -5,7 +5,7 @@ use App\Http\Controllers\GrainController;
 
 
 Route::prefix('grains')->controller(GrainController::class)->group(function () {
-    Route::get('/', 'index')->name('grains.index');
+    Route::get('/', 'index')->name('grains');
     Route::get('/{grain}', 'show')->name('grains.show');
     Route::get('/edit/{grain}', 'edit')->name('edit-grain');
     Route::post('/', 'store')->name('store-grain');
