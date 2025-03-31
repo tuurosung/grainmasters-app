@@ -31,7 +31,7 @@ trait HandleResourceActions
                 return $this->handleError('Unable to update ' . $this->modelName());
             }
 
-            return $this->handleSuccess($this->modelName() . ' updated successfully');
+            return $this->handleSuccess('Bingo ' .$this->modelName() . ' updated successfully');
         } catch (\Exception $e) {
             return $this->handleError('Error updating ' . $this->modelName() . ': ' . $e->getMessage());
         }
@@ -45,7 +45,7 @@ trait HandleResourceActions
                 return $this->handleError('Unable to delete ' . $this->modelName);
             }
 
-            return $this->handleSuccess($this->modelName . ' deleted successfully');
+            return $this->handleSuccess('Bingo! '. $this->modelName . ' deleted successfully');
         } catch (\Exception $e) {
             return $this->handleError('Error deleting ' . $this->modelName . ': ' . $e->getMessage());
         }
