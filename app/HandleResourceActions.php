@@ -27,11 +27,15 @@ trait HandleResourceActions
     public function handleUpdate($request, $model)
     {
         try {
+            if (!$model) {
+                return $this->handleError('Unable to find ' . $this->modelName());
+            }
+
             if (!$model->update($request->validated())) {
                 return $this->handleError('Unable to update ' . $this->modelName());
             }
 
-            return $this->handleSuccess('Bingo ' .$this->modelName() . ' updated successfully');
+            return $this->handleSuccess('Bingo! ' . $this->modelName() . ' updated successfully');
         } catch (\Exception $e) {
             return $this->handleError('Error updating ' . $this->modelName() . ': ' . $e->getMessage());
         }

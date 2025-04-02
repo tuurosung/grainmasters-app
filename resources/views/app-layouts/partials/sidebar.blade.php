@@ -26,6 +26,13 @@
             </a>
         </div>
 
+        <div class="menu-item" id="pharmacy_nav">
+            <a href="{{ route('purchases') }}" class="menu-link">
+                <span class="menu-icon"><i class="fas fa-file-invoice-dollar"></i> </span>
+                <span class="menu-text">Purchases</span>
+            </a>
+        </div>
+
             <div class="menu-item" id="pharmacy_nav">
                 <a href="" class="menu-link">
                     <span class="menu-icon"><i class="fas fa-chart-simple"></i> </span>

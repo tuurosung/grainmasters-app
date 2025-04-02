@@ -25,4 +25,5 @@ Route::middleware('auth')->group(function () {
 
     require __DIR__ . '/app-routes/grainControllers.php';
     require __DIR__ . '/app-routes/warehouseControllers.php';
+    require __DIR__ . '/app-routes/purchasesControllers.php';
 });

@@ -90,9 +90,7 @@
             text-transform: capitalize !important;
         }
 
-        .modal-title {
-            font-family: 'Mukta', sans-serif !important;
-        }
+      
 
         div.dataTables_wrapper div.dataTables_length select {
             width: 100px;
